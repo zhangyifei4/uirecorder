@@ -7,19 +7,63 @@
 Official Site: http://uirecorder.com
 ------------------------------------------------------------------
 
-? Test spec file name: ./sample/test1.spec.js
-? Open checker browser? (Y/n) ? Open checker browser? Yes
-? Browser size (example: 1024 x 768): (1024x768) ? Browser size (example: 1024 x 768): 1024x768
+? Dom path config, extend: id, name, class (data-id,data-name,type,data-type,rol
+e,data-role,data-value) [1A? Dom path config, extend: id, name, class data-id,data-name,type,data-type,role
+,data-role,data-value
+? Black list RegExp for attribute value () ? Black list RegExp for attribute value 
+? Black list RegExp for class value () ? Black list RegExp for class value 
+? Hide before expect () ? Hide before expect 
+? Webdriver host or ip (127.0.0.1) ? Webdriver host or ip 127.0.0.1
+? Webdriver port (4444) ? Webdriver port 4444
+? Browsers list (chrome) ? Browsers list chrome
 
-Recorder server listen on: 56572
-Checker browser opened
+config.json file saved
 
-------------------------------------------------------------------
+Start install project dependencies...
+--------------------------------------------
 
-Recorder browser opened
+Recently updated (since 2020-07-14): 2 packages (detail see file /Users/asteroid/Desktop/Coding/iscas/github_clone/uirecorder/node_modules/.recently_updates.txt)
+  Today:
+    → chromedriver@84.0.0 › extract-zip@2.0.1 › @types/yauzl@2.9.1 › @types/node@*(14.0.24) (06:06:52)
 
-------------------------------------------------------------------
+Start install webdriver dependencies...
+--------------------------------------------
 
-Recorder server closed
-Recorder browser closed
-Checker browser closed
+
+> uirecorder@3.4.1 installdriver /Users/asteroid/Desktop/Coding/iscas/github_clone/uirecorder
+> selenium-standalone install --drivers.firefox.baseURL=http://npm.taobao.org/mirrors/geckodriver --baseURL=http://npm.taobao.org/mirrors/selenium --drivers.chrome.baseURL=http://npm.taobao.org/mirrors/chromedriver --drivers.ie.baseURL=http://npm.taobao.org/mirrors/selenium
+
+
+----------
+
+selenium-standalone installation starting
+
+----------
+
+
+---
+
+selenium install:
+from: http://npm.taobao.org/mirrors/selenium/3.141/selenium-server-standalone-3.141.5.jar
+to: /usr/local/lib/node_modules/selenium-standalone/.selenium/selenium-server/3.141.5-server.jar
+---
+chrome install:
+
+from: http://npm.taobao.org/mirrors/chromedriver/2.43/chromedriver_mac64.zip
+to: /usr/local/lib/node_modules/selenium-standalone/.selenium/chromedriver/2.43-x64-chromedriver
+---
+firefox install:
+from: http://npm.taobao.org/mirrors/geckodriver/v0.23.0/geckodriver-v0.23.0-macos.tar.gz
+to: /usr/local/lib/node_modules/selenium-standalone/.selenium/geckodriver/0.23.0-x64-geckodriver
+
+
+
+
+
+
+
+
+-----
+selenium-standalone installation finished
+-----
+
