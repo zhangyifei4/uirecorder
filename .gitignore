@@ -3,3 +3,8 @@ npm-debug.log
 test
 *.sw*
 *.un~
+config.json
+commons/commons.md
+hosts
+*.log
+*.lock

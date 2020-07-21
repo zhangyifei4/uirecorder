@@ -2,9 +2,24 @@
    / / / /  _/  / __ \___  _________  _________/ /__  _____
   / / / // /   / /_/ / _ \/ ___/ __ \/ ___/ __  / _ \/ ___/
  / /_/ // /   / _, _/  __/ /__/ /_/ / /  / /_/ /  __/ /    
- \____/___/  /_/ |_|\___/\___/\____/_/   \__,_/\___/_/    v3.3.0
+ \____/___/  /_/ |_|\___/\___/\____/_/   \__,_/\___/_/    v3.4.1
 
 Official Site: http://uirecorder.com
 ------------------------------------------------------------------
 
-config.json 文件查找失败，请先初始化！
+? Test spec file name: ./sample/test1.spec.js
+? Open checker browser? (Y/n) ? Open checker browser? Yes
+? Browser size (example: 1024 x 768): (1024x768) ? Browser size (example: 1024 x 768): 1024x768
+
+Recorder server listen on: 56572
+Checker browser opened
+
+------------------------------------------------------------------
+
+Recorder browser opened
+
+------------------------------------------------------------------
+
+Recorder server closed
+Recorder browser closed
+Checker browser closed
