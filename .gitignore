@@ -8,3 +8,8 @@ commons/commons.md
 hosts
 *.log
 *.lock
+.DS_Store
+reports/*
+sample/*
+reports/*
+reports/index.html

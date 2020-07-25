@@ -7,63 +7,1766 @@
 Official Site: http://uirecorder.com
 ------------------------------------------------------------------
 
-? Dom path config, extend: id, name, class (data-id,data-name,type,data-type,rol
-e,data-role,data-value) [1A? Dom path config, extend: id, name, class data-id,data-name,type,data-type,role
-,data-role,data-value
-? Black list RegExp for attribute value () ? Black list RegExp for attribute value 
-? Black list RegExp for class value () ? Black list RegExp for class value 
-? Hide before expect () ? Hide before expect 
-? Webdriver host or ip (127.0.0.1) ? Webdriver host or ip 127.0.0.1
-? Webdriver port (4444) ? Webdriver port 4444
-? Browsers list (chrome) ? Browsers list chrome
+? Test spec file name: sample/x
+? File existed, load and continue to record? (y/N) [2K[G? File existed, load and continue to record? No
+? Open checker browser? (Y/n) [2K[G? Open checker browser? Yes
+? Browser size (example: 1024 x 768): (1024x768) [2K[G? Browser size (example: 1024 x 768): 1024x768
 
-config.json file saved
+Recorder server listen on: 54571
+Checker browser opened
 
-Start install project dependencies...
---------------------------------------------
+------------------------------------------------------------------
 
-Recently updated (since 2020-07-14): 2 packages (detail see file /Users/asteroid/Desktop/Coding/iscas/github_clone/uirecorder/node_modules/.recently_updates.txt)
-  Today:
-    → chromedriver@84.0.0 › extract-zip@2.0.1 › @types/yauzl@2.9.1 › @types/node@*(14.0.24) (06:06:52)
-
-Start install webdriver dependencies...
---------------------------------------------
-
-
-> uirecorder@3.4.1 installdriver /Users/asteroid/Desktop/Coding/iscas/github_clone/uirecorder
-> selenium-standalone install --drivers.firefox.baseURL=http://npm.taobao.org/mirrors/geckodriver --baseURL=http://npm.taobao.org/mirrors/selenium --drivers.chrome.baseURL=http://npm.taobao.org/mirrors/chromedriver --drivers.ie.baseURL=http://npm.taobao.org/mirrors/selenium
-
-
-----------
-
-selenium-standalone installation starting
-
-----------
-
-
----
-
-selenium install:
-from: http://npm.taobao.org/mirrors/selenium/3.141/selenium-server-standalone-3.141.5.jar
-to: /usr/local/lib/node_modules/selenium-standalone/.selenium/selenium-server/3.141.5-server.jar
----
-chrome install:
-
-from: http://npm.taobao.org/mirrors/chromedriver/2.43/chromedriver_mac64.zip
-to: /usr/local/lib/node_modules/selenium-standalone/.selenium/chromedriver/2.43-x64-chromedriver
----
-firefox install:
-from: http://npm.taobao.org/mirrors/geckodriver/v0.23.0/geckodriver-v0.23.0-macos.tar.gz
-to: /usr/local/lib/node_modules/selenium-standalone/.selenium/geckodriver/0.23.0-x64-geckodriver
-
-
-
-
-
-
-
-
------
-selenium-standalone installation finished
------
-
+Recorder browser opened
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'url',
+    data: 'http://39.104.118.163:8081/agilefant/',
+    fix: false
+  }
+}
+  url: http://39.104.118.163:8081/agilefant/
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: { window: 0, frame: null, cmd: 'waitBody', fix: false }
+}
+  waitBody: 
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#username',
+      x: 61.34375,
+      y: 7.734375,
+      button: 0,
+      text: 'j_username',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#username',
+      x: 62,
+      y: 8,
+      button: 0,
+      text: 'j_username',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 'a' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 'd' },
+    fix: false
+  }
+}
+  click: j_username ( #username, 62, 8, 0 )
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 'n' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 'u' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 'b' },
+    fix: false
+  }
+}
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: '{BACK_SPACE}' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: '{BACK_SPACE}' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: '{BACK_SPACE}' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 'm' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 'i' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 'n' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: '{TAB}' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 's' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 'e' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 'c' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 'r' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 'e' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 't' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: 'input[value="Log in"]',
+      x: 30.34375,
+      y: 14.734375,
+      button: 0,
+      text: 'Log in',
+      option: false
+    },
+    fix: false
+  }
+}
+  sendKeys: adnub{BACK_SPACE}{BACK_SPACE}{BACK_SPACE}min{TAB}secret
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: 'input[value="Log in"]',
+      x: 31,
+      y: 15,
+      button: 0,
+      text: 'Log in',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: Log in ( input[value="Log in"], 31, 15, 0 )
+{
+  type: 'saveCmd',
+  data: { window: 0, frame: null, cmd: 'waitBody', fix: false }
+}
+   ✓ execute succeed
+  waitBody: 
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'url',
+    data: 'http://39.104.118.163:8081/agilefant/dailyWork.action',
+    fix: false
+  }
+}
+  url: http://39.104.118.163:8081/agilefant/dailyWork.action
+{
+  type: 'saveCmd',
+  data: { window: 0, frame: null, cmd: 'waitBody', fix: false }
+}
+   ✓ execute succeed
+  waitBody: 
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#createNewMenuLink span',
+      x: 33.015625,
+      y: 9.671875,
+      button: 0,
+      text: 'Create new',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#createNewMenuLink span',
+      x: 34,
+      y: 10,
+      button: 0,
+      text: 'Create new',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: Create new ( #createNewMenuLink span, 34, 10, 0 )
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#createNewProject',
+      x: 58.671875,
+      y: 10.6875,
+      button: 0,
+      text: 'Project »',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#createNewProject',
+      x: 59,
+      y: 11,
+      button: 0,
+      text: 'Project »',
+      option: false
+    },
+    fix: false
+  }
+}
+   ✓ execute succeed
+  click: Project » ( #createNewProject, 59, 11, 0 )
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 's' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 's' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 's' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 's' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'sendKeys',
+    data: { keys: 's' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: '2' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: '3' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: '4' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: '5' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: '6' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: '7' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: '8' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: '9' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: '0' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#dynamictable-cell-71',
+      x: 53.1875,
+      y: 23.03125,
+      button: 0,
+      text: 'Description',
+      option: false
+    },
+    fix: false
+  }
+}
+  switchFrame: #IFrame
+   ✓ execute succeed
+  sendKeys: sssss234567890
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#dynamictable-cell-71',
+      x: 53,
+      y: 24,
+      button: 0,
+      text: 'Description',
+      option: false
+    },
+    fix: false
+  }
+}
+  switchFrame: null
+   ✓ execute succeed
+  click: Description ( #dynamictable-cell-71, 53, 24, 0 )
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#editor-2',
+      x: 128.09375,
+      y: 12.390625,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#editor-2',
+      x: 129,
+      y: 13,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: #editor-2, 129, 13, 0
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#editor-2',
+      x: 6.09375,
+      y: 9.390625,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#editor-2',
+      x: 7,
+      y: 10,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: #editor-2, 7, 10, 0
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'mouseDown',
+    data: {
+      path: 'body',
+      x: 2,
+      y: 9,
+      button: 0,
+      text: '1234567890',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'mouseUp',
+    data: {
+      path: 'body',
+      x: 2,
+      y: 9,
+      button: 0,
+      text: '1234567890',
+      option: false
+    },
+    fix: false
+  }
+}
+  switchFrame: #IFrame
+   ✓ execute succeed
+  click: 1234567890 ( body, 2, 9, 0 )
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'mouseDown',
+    data: {
+      path: 'body',
+      x: 2,
+      y: 9,
+      button: 0,
+      text: '1234567890',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'mouseUp',
+    data: {
+      path: 'body',
+      x: 2,
+      y: 9,
+      button: 0,
+      text: '1234567890',
+      option: false
+    },
+    fix: false
+  }
+}
+   ✓ execute succeed
+  click: 1234567890 ( body, 2, 9, 0 )
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: 'a' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: 'a' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: 'a' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: 'a' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '//span[text()="Description"]',
+      x: 55.78125,
+      y: 2.03125,
+      button: 0,
+      text: 'Description',
+      option: false
+    },
+    fix: false
+  }
+}
+  sendKeys: aaaa
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '//span[text()="Description"]',
+      x: 55,
+      y: 3,
+      button: 0,
+      text: 'Description',
+      option: false
+    },
+    fix: false
+  }
+}
+  switchFrame: null
+   ✓ execute succeed
+  click: Description ( //span[text()="Description"], 55, 3, 0 )
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#editor-2',
+      x: 1.09375,
+      y: 13.390625,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#editor-2',
+      x: 2,
+      y: 14,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: #editor-2, 2, 14, 0
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#dynamictable-cell-72 a.bold',
+      x: 11.09375,
+      y: 12.03125,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#dynamictable-cell-72 a.bold',
+      x: 12,
+      y: 13,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: #dynamictable-cell-72 a.bold, 12, 13, 0
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#dynamictable-cell-72 a.bold',
+      x: 11.09375,
+      y: 11.03125,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#dynamictable-cell-72 a.bold',
+      x: 12,
+      y: 12,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: #dynamictable-cell-72 a.bold, 12, 12, 0
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'mouseDown',
+    data: {
+      path: 'body',
+      x: 6,
+      y: 10,
+      button: 0,
+      text: 'aaaa1234567890',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'mouseUp',
+    data: {
+      path: 'body',
+      x: 6,
+      y: 10,
+      button: 0,
+      text: 'aaaa1234567890',
+      option: false
+    },
+    fix: false
+  }
+}
+   ✓ execute succeed
+  switchFrame: #IFrame
+   ✓ execute succeed
+  click: aaaa1234567890 ( body, 6, 10, 0 )
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: 's' },
+    fix: false
+  }
+}
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: 's' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: '#IFrame',
+    cmd: 'sendKeys',
+    data: { keys: 's' },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#dynamictable-cell-67',
+      x: 51.1875,
+      y: 18.375,
+      button: 0,
+      text: 'End Date',
+      option: false
+    },
+    fix: false
+  }
+}
+  sendKeys: sss
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#dynamictable-cell-67',
+      x: 51,
+      y: 19,
+      button: 0,
+      text: 'End Date',
+      option: false
+    },
+    fix: false
+  }
+}
+  switchFrame: null
+   ✓ execute succeed
+  click: End Date ( #dynamictable-cell-67, 51, 19, 0 )
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#dynamictable-cell-68',
+      x: 391.5,
+      y: 7.375,
+      button: 0,
+      text: '2020-08-07 18:00',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#dynamictable-cell-68',
+      x: 392,
+      y: 8,
+      button: 0,
+      text: '2020-08-07 18:00',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: 2020-08-07 18:00 ( #dynamictable-cell-68, 392, 8, 0 )
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#dynamictable-cell-64 span.ui-button-icon-primary',
+      x: 9.75,
+      y: 9.71875,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#dynamictable-cell-64 span.ui-button-icon-primary',
+      x: 10,
+      y: 10,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: #dynamictable-cell-64 span.ui-button-icon-primary, 10, 10, 0
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#ui-active-menuitem',
+      x: 310,
+      y: 8.78125,
+      button: 0,
+      text: 'producthis is a prod...',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#ui-active-menuitem',
+      x: 310,
+      y: 9,
+      button: 0,
+      text: 'producthis is a prod...',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: producthis is a prod... ( #ui-active-menuitem, 310, 9, 0 )
+   ✖ execute failed Wait element displayed timeout: #ui-active-menuitem ,10000ms
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#dynamictable-cell-64 span.ui-button-icon-primary',
+      x: 8.75,
+      y: 6.71875,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#dynamictable-cell-64 span.ui-button-icon-primary',
+      x: 9,
+      y: 7,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: #dynamictable-cell-64 span.ui-button-icon-primary, 9, 7, 0
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseMove',
+    data: {
+      path: 'li[role="menuitem"]:nth-child(1) > a.ui-corner-all',
+      x: 151,
+      y: 17,
+      text: 'Example Product'
+    },
+    fix: false
+  }
+}
+  mouseMove: Example Product ( li[role="menuitem"]:nth-child(1) > a.ui-corner-all, 151, 17 )
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#ui-active-menuitem',
+      x: 164,
+      y: 14.78125,
+      button: 0,
+      text: 'Example Product',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#ui-active-menuitem',
+      x: 164,
+      y: 15,
+      button: 0,
+      text: 'Example Product',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: Example Product ( #ui-active-menuitem, 164, 15, 0 )
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#dynamictable-cell-67',
+      x: 25.1875,
+      y: 16.375,
+      button: 0,
+      text: 'End Date',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#dynamictable-cell-67',
+      x: 25,
+      y: 17,
+      button: 0,
+      text: 'End Date',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#dynamictable-cell-65 span',
+      x: 53.78125,
+      y: 7.046875,
+      button: 0,
+      text: 'Start Date',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#dynamictable-cell-65 span',
+      x: 53,
+      y: 8,
+      button: 0,
+      text: 'Start Date',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#dynamictable-cell-65 span',
+      x: 53.78125,
+      y: 7.046875,
+      button: 0,
+      text: 'Start Date',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#dynamictable-cell-65 span',
+      x: 53,
+      y: 8,
+      button: 0,
+      text: 'Start Date',
+      option: false
+    },
+    fix: false
+  }
+}
+   ✖ execute failed Wait element displayed timeout: #ui-active-menuitem ,10000ms
+  click: End Date ( #dynamictable-cell-67, 25, 17, 0 )
+   ✓ execute succeed
+  dblClick: Start Date ( #dynamictable-cell-65 span, 53, 8, 0 )
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#dynamictable-cell-64 span.ui-button-icon-primary',
+      x: 6.75,
+      y: 9.71875,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#dynamictable-cell-64 span.ui-button-icon-primary',
+      x: 7,
+      y: 10,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: #dynamictable-cell-64 span.ui-button-icon-primary, 7, 10, 0
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#dynamictable-cell-64 span.ui-button-icon-primary',
+      x: 9.75,
+      y: 6.71875,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#dynamictable-cell-64 span.ui-button-icon-primary',
+      x: 10,
+      y: 7,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: #dynamictable-cell-64 span.ui-button-icon-primary, 10, 7, 0
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#dynamictable-cell-64 span.ui-button-icon-primary',
+      x: 6.75,
+      y: 13.71875,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#dynamictable-cell-64 span.ui-button-icon-primary',
+      x: 7,
+      y: 14,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: #dynamictable-cell-64 span.ui-button-icon-primary, 7, 14, 0
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseMove',
+    data: {
+      path: 'li[role="menuitem"]:nth-child(3) > a.ui-corner-all',
+      x: 103,
+      y: 14,
+      text: 'This is a test'
+    },
+    fix: false
+  }
+}
+  mouseMove: This is a test ( li[role="menuitem"]:nth-child(3) > a.ui-corner-all, 103, 14 )
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#ui-active-menuitem',
+      x: 89,
+      y: 13.78125,
+      button: 0,
+      text: 'This is a test',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#ui-active-menuitem',
+      x: 89,
+      y: 14,
+      button: 0,
+      text: 'This is a test',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: This is a test ( #ui-active-menuitem, 89, 14, 0 )
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '//span[text()="Ok"]',
+      x: 4.84375,
+      y: 7.078125,
+      button: 0,
+      text: 'Ok',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '//span[text()="Ok"]',
+      x: 5,
+      y: 8,
+      button: 0,
+      text: 'Ok',
+      option: false
+    },
+    fix: false
+  }
+}
+  click: Ok ( //span[text()="Ok"], 5, 8, 0 )
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: { window: 0, frame: null, cmd: 'waitBody', fix: false }
+}
+  waitBody: 
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#navbar li[data-id="project"] > a',
+      x: 29,
+      y: 30,
+      button: 0,
+      text: '项目',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#navbar li[data-id="project"] > a',
+      x: 29,
+      y: 30,
+      button: 0,
+      text: '项目',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: { window: 0, frame: null, cmd: 'waitBody', fix: false }
+}
+  click: 项目 ( #navbar li[data-id="project"] > a, 29, 30, 0 )
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'scrollTo',
+    data: { x: 221, y: 0 },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#subNavbar li[data-id="doc"] > a',
+      x: 36,
+      y: 24,
+      button: 0,
+      text: '文档',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#subNavbar li[data-id="doc"] > a',
+      x: 36,
+      y: 24,
+      button: 0,
+      text: '文档',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: { window: 0, frame: null, cmd: 'waitBody', fix: false }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#navbar li[data-id="product"] > a',
+      x: 19,
+      y: 40,
+      button: 0,
+      text: '产品',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#navbar li[data-id="product"] > a',
+      x: 19,
+      y: 40,
+      button: 0,
+      text: '产品',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: { window: 0, frame: null, cmd: 'waitBody', fix: false }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'scrollTo',
+    data: { x: 482, y: 0 },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#pageActions a',
+      x: 67.625,
+      y: 21,
+      button: 0,
+      text: '添加产品',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#pageActions a',
+      x: 68,
+      y: 21,
+      button: 0,
+      text: '添加产品',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: { window: 0, frame: null, cmd: 'waitBody', fix: false }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'scrollTo',
+    data: { x: 0, y: 105 },
+    fix: false
+  }
+}
+   ✖ execute failed Wait element displayed timeout: #navbar li[data-id="project"] > a ,10000ms
+  waitBody: 
+   ✓ execute succeed
+  scrollTo: 221, 0
+   ✓ execute succeed
+  click: 文档 ( #subNavbar li[data-id="doc"] > a, 36, 24, 0 )
+   ✖ execute failed Wait element displayed timeout: #subNavbar li[data-id="doc"] > a ,10000ms
+  waitBody: 
+   ✓ execute succeed
+  click: 产品 ( #navbar li[data-id="product"] > a, 19, 40, 0 )
+   ✓ execute succeed
+  waitBody: 
+   ✓ execute succeed
+  scrollTo: 482, 0
+   ✓ execute succeed
+  click: 添加产品 ( #pageActions a, 68, 21, 0 )
+   ✓ execute succeed
+  waitBody: 
+   ✓ execute succeed
+  scrollTo: 0, 105
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseDown',
+    data: {
+      path: '#PO_chosen div',
+      x: 8,
+      y: 12,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseUp',
+    data: {
+      path: '#PO_chosen a',
+      x: 457,
+      y: 13,
+      button: 0,
+      text: '',
+      option: false
+    },
+    fix: false
+  }
+}
+  mouseDown: #PO_chosen div, 8, 12, 0
+   ✓ execute succeed
+  mouseUp: #PO_chosen a, 457, 13, 0
+   ✓ execute succeed
+{
+  type: 'saveCmd',
+  data: {
+    window: 0,
+    frame: null,
+    cmd: 'mouseMove',
+    data: { path: '#PO_chosen span', x: 366, y: 5, text: '' },
+    fix: false
+  }
+}
+  mouseMove: #PO_chosen span, 366, 5
+   ✓ execute succeed

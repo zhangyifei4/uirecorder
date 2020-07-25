@@ -21,8 +21,8 @@
     // 全局配置
     var configLoaded = false;
     var testVars = {};
-    var arrPathAttrs = [];
-    var mapPathAttrs = {};
+    var arrPathAttrs = [];          // 配置的选择器禁用情况
+    var mapPathAttrs = {};          // 同上，只是转化成了map
     var strAttrValueBlack = '';
     var reTextValueBlack = /[×\s]/;
     var reAttrValueBlack = /^$/;
@@ -361,11 +361,13 @@
             var elements = relativeNode.querySelectorAll(path);
             if(isAllDom){
                 return elements.length === 1;
+                // 查看relativeNode下，path定位器定位结果是否唯一
             }
             else{
                 var count = 0;
                 for(var i=0;i<elements.length;i++){
                     if(!isHidden(elements[i]))count ++;
+                    // 查看relativeNode下，在忽略隐藏的Dom的情况下，path定位器定位结果是否唯一
                 }
                 return count === 1;
             }
@@ -1354,6 +1356,7 @@
             var node = target;
             var nodeName, path, offset, left, top, savedParent;
             var notFirstNode = false; // 当前点击控件以可见范围内进行定位，其它以全局定位（很多局部控件是不可见的）
+            // 检查母节点offset是否改变，如果改变，一直向上寻找，直到根结点放弃
             while(node !== null){
                 nodeName = node.nodeName.toLowerCase();
                 if(nodeName !== '#document-fragment'){
@@ -1370,7 +1373,7 @@
                             path: path,
                             left: left,
                             top: top
-                        };
+                        }; //返回最近的共用母节点
                     }
                 }
                 if(nodeName === 'html'){
@@ -1381,6 +1384,7 @@
                 }
                 notFirstNode = true;
             }
+            //如果直到根结点，都没有找到mouseUp，mouseDown共用的节点，
             path = getDomPath(target);
             if(path !== null){
                 offset = target.getBoundingClientRect();
