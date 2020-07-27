@@ -1,3 +1,5 @@
+reports
+sample
 node_modules
 npm-debug.log
 test
@@ -9,7 +11,6 @@ hosts
 *.log
 *.lock
 .DS_Store
-reports/*
-sample/*
-reports/*
+
 reports/index.html
+reports/index.json

@@ -30,6 +30,10 @@
     var hideBeforeExpect = '';
     var specLists = [];
 
+    // 快捷键打开hover等
+    var hotkeyRecored=null;
+    var hotkeyTimeout_id=null;
+
     // i18n
     var i18n = {};
     var __ = function(str){
@@ -484,14 +488,16 @@
         }
     }
 
-    // save command
+    // save command 所有操作的保存
     function saveCommand(cmd, data){
+        // console.log('save command',cmd,data)
         var frameId = getFrameId();
         var cmdData = {
             frame: frameId,
             cmd: cmd,
             data: data
         };
+        // TODO: 待删除【？】
         if(/^!/.test(frameId)){
             parent.postMessage({
                 type: 'uiRecorderFrameCommmand',
@@ -521,6 +527,8 @@
     window.addEventListener('message', function(e){
         var data = e.data;
         var type = data && data.type;
+        // console.log('"MESSAGE" event listener e:',e.data)
+        // TODO: 待删除【？】
         if(type === 'uiRecorderAlertCommand'){
             var cmdInfo = data.cmdInfo;
             saveCommand(cmdInfo.cmd, cmdInfo.data);
@@ -1062,11 +1070,21 @@
         divDomSelector.id = 'uirecorder-selecter-mask';
         divDomSelector.className = 'uirecorder';
         divDomSelector.innerHTML = '<style>#uirecorder-selecter-mask{display:none;background:rgba(151, 232, 81,0.5);position:fixed;z-index:2147483647;}</style>';
+        // 必须同时禁掉 mouseup 和 mousedown
+        divDomSelector.addEventListener('mousedown', function(event){
+            event.stopPropagation();
+            event.preventDefault();
+        });
+        divDomSelector.addEventListener('mouseup', function(event){
+            event.stopPropagation();
+            event.preventDefault();
+        });
         divDomSelector.addEventListener('click', function(event){
             event.stopPropagation();
             event.preventDefault();
             endDomSelector(event);
         });
+        
         document.body.appendChild(divDomSelector);
     }
 
@@ -1175,7 +1193,9 @@
                 event.preventDefault();
             }
         }, true);
+
         // catch event
+        // 全局 MouseDown，先saveParentsOffset保存所有母节点（含n次getDomPath），再getDomPath按照优先级确定最优定位器，通过saveCommand传回后端
         document.addEventListener('mousedown', function(event){
             var target = event.target;
             if(target.shadowRoot){
@@ -1183,7 +1203,7 @@
             }
             if(isNotInToolsPannel(target)){
                 if(isRecording){
-                    if(isMouseNotInScroll(event) && /^(html|select|optgroup|option)$/i.test(target.tagName) === false && isUploadElement(target) === false){
+                    if(isMouseNotInScroll(event) && /^(select|optgroup|option)$/i.test(target.tagName) === false && isUploadElement(target) === false){ // 允许 html
                         var labelTarget = getLabelTarget(target);
                         if(labelTarget){
                             target = labelTarget;
@@ -1220,6 +1240,7 @@
             }
         }, true);
 
+        // 全局 MouseUp，【？】定位器使用getFixedParent，通过saveCommand传回后端
         document.addEventListener('mouseup', function(event){
             var target = event.target;
             if(target.shadowRoot){
@@ -1228,7 +1249,7 @@
             if(isNotInToolsPannel(target)){
                 if(isRecording){
                     var tagName = target.tagName;
-                    if(isMouseNotInScroll(event) && /^(html|select|optgroup|option)$/i.test(tagName) === false && isUploadElement(target) === false){
+                    if(isMouseNotInScroll(event) && /^(select|optgroup|option)$/i.test(tagName) === false && isUploadElement(target) === false){ // 允许 html
                         // get offset of the fixed parent
                         var labelTarget = getLabelTarget(target);
                         if(labelTarget){
@@ -1441,6 +1462,7 @@
         }
 
         // catch keydown event
+        // 全局 keyDown：用于“功能键组合”
         var lastModifierKeydown = null;
         var isModifierKeyRecord = false; // 是否记录控制键
         document.addEventListener('keydown', function(event){
@@ -1529,6 +1551,7 @@
         });
 
         // catch keyup event
+        // 全局 KeyUp：用于功能键组合时的key up
         document.addEventListener('keyup', function(event){
             var target= event.target;
             if(isNotInToolsPannel(target)){
@@ -1559,9 +1582,10 @@
         }, true);
 
         // catch keypress event
+        // 全局 KeyPress：用于”非功能键“的正常输入
         document.addEventListener('keypress', function(event){
             var target = event.target;
-            if(isNotInToolsPannel(target) && /^(HTML|IFRAME)$/i.test(target.tagName) === false){
+            if(isNotInToolsPannel(target)){ // 放弃对 /^(HTML|IFRAME)$/i.test(target.tagName) === false 的限制
                 if(isRecording){
                     var typedCharacter = String.fromCharCode(event.keyCode);
                     if(typedCharacter !== '' && /[\r\n]/.test(typedCharacter) === false){
@@ -1948,6 +1972,7 @@
             document.body.appendChild(divDomDialog);
             var domDialogTitle = document.getElementById('uirecorder-dialog-title');
             var domDialogContent = document.getElementById('uirecorder-dialog-content');
+            // 工具栏 Keydown
             divDomDialog.addEventListener('click', function(event){
                 event.stopPropagation();
                 event.preventDefault();
@@ -1966,12 +1991,15 @@
                         break;
                 }
             });
+            // 工具栏 Keydown
             divDomDialog.addEventListener('keydown', function(event){
                 var keyCode = event.keyCode;
                 if(keyCode === 13 && (event.ctrlKey || event.metaKey)){
                     okCallback();
                 }
             });
+
+            // 全局 KeyUp（2）:用于全局快捷键
             document.addEventListener('keyup', function(event){
                 var keyCode = event.keyCode;
                 switch(keyCode){
@@ -1979,6 +2007,69 @@
                         if(isShowDialog){
                             hideDialog();
                             cancelCallback && cancelCallback();
+                        }
+                        break;
+                    // TODO: 待重构【？】
+                    case 16:
+                        if(hotkeyRecored==null){
+                            hotkeyRecored='shift';
+                            hotkeyTimeout_id = setTimeout(function(){
+                                hotkeyRecored = null;
+                            },800); // 双击 shift 进入hover
+                        }else if (hotkeyRecored=='shift'){
+                            hotkeyRecored=null;
+                            clearTimeout(hotkeyTimeout_id)
+
+                            hoverMode = !hoverMode;
+                            target=event.target;
+                            if(target.tagName === 'IMG'){
+                                target = target.parentNode;
+                            }
+                            if(hoverMode){
+                                showSelector(function(domInfo){
+                                    // 使事件可以触发
+                                    setGlobalWorkMode('pauseRecord');
+                                    // 添加悬停
+                                    GlobalEvents.emit('addHover', domInfo);
+                                    // 单一悬停模式
+                                    hoverMode = false;
+                                    setGlobalWorkMode('record');
+                                });
+                            }
+                        }
+                        break;
+                    case 17:
+                        let tmpLastWordMode = lastWorkMode;
+                        if(hotkeyRecored==null){
+                            hotkeyRecored='ctrl';
+                            hotkeyTimeout_id = setTimeout(function(){
+                                hotkeyRecored = null;
+                            },800); // 双击 ctrl 进入 expect
+                        }else if (hotkeyRecored=='ctrl'){
+                            hotkeyRecored=null;
+                            clearTimeout(hotkeyTimeout_id)
+
+                            hideDialog();
+                            if(hideBeforeExpect){
+                                hideDom(hideBeforeExpect);
+                            }
+                            showSelector(function(domInfo){
+                                if(hideBeforeExpect){
+                                    showDom(hideBeforeExpect);
+                                }
+                                showExpectDailog(domInfo, function(frameId, expectData){
+                                    if(expectData.type === 'alert'){
+                                        lastAlertExpect = expectData;
+                                    }
+                                    else{
+                                        GlobalEvents.emit('addExpect', {
+                                            frame: frameId,
+                                            data: expectData
+                                        })
+                                    }
+                                    setGlobalWorkMode(tmpLastWordMode);
+                                });
+                            });
                         }
                         break;
                 }
