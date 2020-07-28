@@ -1170,20 +1170,21 @@
         }, true);
 
         // catch event
-        // 全局 MouseDown，getDomPath按照优先级确定最优定位器，通过saveCommand传回后端
+        // 全局 MouseDown，先saveParentsOffset保存所有母节点（含n次getDomPath），再getDomPath按照优先级确定最优定位器，通过saveCommand传回后端
         document.addEventListener('mousedown', function (event) {
-            let target = event.target;
+            var target = event.target;
             if (target.shadowRoot) {
                 target = event.path[0];
             }
             if (isNotInToolsPannel(target)) {
                 if (isRecording) {
                     if (isMouseNotInScroll(event) && /^(select|optgroup|option)$/i.test(target.tagName) === false && isUploadElement(target) === false) { // 允许 html
-                        let labelTarget = getLabelTarget(target);
+                        var labelTarget = getLabelTarget(target);
                         if (labelTarget) {
                             target = labelTarget;
                         }
-                        let path = getDomPath(target,true);
+                        saveParentsOffset(target);
+                        var path = getDomPath(target);
                         if (path !== null) {
                             var offset = target.getBoundingClientRect();
                             var x, y;
@@ -1212,33 +1213,35 @@
             }
         }, true);
 
-        // 全局 MouseUp，同理，通过saveCommand传回后端
+        // 全局 MouseUp，【？】定位器使用getFixedParent，通过saveCommand传回后端
         document.addEventListener('mouseup', function (event) {
-            let target = event.target;
+            var target = event.target;
             if (target.shadowRoot) {
                 target = event.path[0];
             }
             if (isNotInToolsPannel(target)) {
                 if (isRecording) {
-                    if (isMouseNotInScroll(event) && /^(select|optgroup|option)$/i.test(target.tagName) === false && isUploadElement(target) === false) { // 允许 html
-                        let labelTarget = getLabelTarget(target);
+                    var tagName = target.tagName;
+                    if (isMouseNotInScroll(event) && /^(select|optgroup|option)$/i.test(tagName) === false && isUploadElement(target) === false) { // 允许 html
+                        // get offset of the fixed parent
+                        var labelTarget = getLabelTarget(target);
                         if (labelTarget) {
                             target = labelTarget;
                         }
-                        let path = getDomPath(target,true);
-                        if (path !== null) {
+                        var fixedParent = getFixedParent(target);
+                        if (fixedParent !== null) {
                             var offset = target.getBoundingClientRect();
                             var x, y;
                             if (labelTarget) {
                                 x = Math.floor(offset.width / 2);
                                 y = Math.floor(offset.height / 2);
                             } else {
-                                x = event.clientX - offset.left;
-                                y = event.clientY - offset.top;
+                                x = event.clientX - fixedParent.left;
+                                y = event.clientY - fixedParent.top;
                             }
-                            GlobalEvents.emit('showDomPath', path);
+                            GlobalEvents.emit('showDomPath', fixedParent.path);
                             saveCommand('mouseUp', {
-                                path: path,
+                                path: fixedParent.path,
                                 x: x,
                                 y: y,
                                 button: event.button,
