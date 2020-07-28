@@ -487,7 +487,7 @@
             cmd: cmd,
             data: data
         };
-        // TODO: 待删除【？】
+        // TODO: 待删除【？】d
         if (/^!/.test(frameId)) {
             parent.postMessage({
                 type: 'uiRecorderFrameCommmand',
@@ -517,7 +517,7 @@
         var data = e.data;
         var type = data && data.type;
         // console.log('"MESSAGE" event listener e:',e.data)
-        // TODO: 待删除【？】
+        // TODO: 待删除【？】不急删除
         if (type === 'uiRecorderAlertCommand') {
             var cmdInfo = data.cmdInfo;
             saveCommand(cmdInfo.cmd, cmdInfo.data);
@@ -1310,78 +1310,78 @@
         }, true);
 
 
-        // save all parents offset
-        var mapParentsOffset = {};
+        // // save all parents offset
+        // var mapParentsOffset = {};
 
-        function saveParentsOffset(target) {
-            var documentElement = document.documentElement;
-            mapParentsOffset = {};
-            var notFirstNode = false; // 当前点击控件以可见范围内进行定位，其它以全局定位（很多局部控件是不可见的）
-            while (target !== null) {
-                var nodeName = target.nodeName.toLowerCase();
-                if (nodeName !== '#document-fragment') {
-                    var path = getDomPath(target, notFirstNode);
-                    var rect = target.getBoundingClientRect();
-                    mapParentsOffset[path] = {
-                        left: parseInt(rect.left, 10),
-                        top: parseInt(rect.top, 10)
-                    };
-                }
-                if (nodeName === 'html') {
-                    target = null;
-                } else {
-                    target = target.parentNode || target.host;
-                }
-                notFirstNode = false;
-            }
-        }
+        // function saveParentsOffset(target) {
+        //     var documentElement = document.documentElement;
+        //     mapParentsOffset = {};
+        //     var notFirstNode = false; // 当前点击控件以可见范围内进行定位，其它以全局定位（很多局部控件是不可见的）
+        //     while (target !== null) {
+        //         var nodeName = target.nodeName.toLowerCase();
+        //         if (nodeName !== '#document-fragment') {
+        //             var path = getDomPath(target, notFirstNode);
+        //             var rect = target.getBoundingClientRect();
+        //             mapParentsOffset[path] = {
+        //                 left: parseInt(rect.left, 10),
+        //                 top: parseInt(rect.top, 10)
+        //             };
+        //         }
+        //         if (nodeName === 'html') {
+        //             target = null;
+        //         } else {
+        //             target = target.parentNode || target.host;
+        //         }
+        //         notFirstNode = false;
+        //     }
+        // }
 
-        // get the fixed offset parent
-        function getFixedParent(target) {
-            var documentElement = document.documentElement;
-            var node = target;
-            var nodeName, path, offset, left, top, savedParent;
-            var notFirstNode = false; // 当前点击控件以可见范围内进行定位，其它以全局定位（很多局部控件是不可见的）
-            // 检查母节点offset是否改变，如果改变，一直向上寻找，直到根结点放弃
-            while (node !== null) {
-                nodeName = node.nodeName.toLowerCase();
-                if (nodeName !== '#document-fragment') {
-                    path = getDomPath(node, notFirstNode);
-                    if (path === null) {
-                        break;
-                    }
-                    offset = node.getBoundingClientRect();
-                    left = parseInt(offset.left, 10);
-                    top = parseInt(offset.top, 10);
-                    savedParent = mapParentsOffset[path];
-                    if (savedParent && left === savedParent.left && top === savedParent.top) {
-                        return {
-                            path: path,
-                            left: left,
-                            top: top
-                        }; //返回最近的共用母节点
-                    }
-                }
-                if (nodeName === 'html') {
-                    node = null;
-                } else {
-                    node = node.parentNode;
-                }
-                notFirstNode = true;
-            }
-            //如果直到根结点，都没有找到mouseUp，mouseDown共用的节点，
-            path = getDomPath(target);
-            if (path !== null) {
-                offset = target.getBoundingClientRect();
-                return {
-                    path: path,
-                    left: offset.left,
-                    top: offset.top
-                };
-            } else {
-                return null;
-            }
-        }
+        // // get the fixed offset parent
+        // function getFixedParent(target) {
+        //     var documentElement = document.documentElement;
+        //     var node = target;
+        //     var nodeName, path, offset, left, top, savedParent;
+        //     var notFirstNode = false; // 当前点击控件以可见范围内进行定位，其它以全局定位（很多局部控件是不可见的）
+        //     // 检查母节点offset是否改变，如果改变，一直向上寻找，直到根结点放弃
+        //     while (node !== null) {
+        //         nodeName = node.nodeName.toLowerCase();
+        //         if (nodeName !== '#document-fragment') {
+        //             path = getDomPath(node, notFirstNode);
+        //             if (path === null) {
+        //                 break;
+        //             }
+        //             offset = node.getBoundingClientRect();
+        //             left = parseInt(offset.left, 10);
+        //             top = parseInt(offset.top, 10);
+        //             savedParent = mapParentsOffset[path];
+        //             if (savedParent && left === savedParent.left && top === savedParent.top) {
+        //                 return {
+        //                     path: path,
+        //                     left: left,
+        //                     top: top
+        //                 }; //返回最近的共用母节点
+        //             }
+        //         }
+        //         if (nodeName === 'html') {
+        //             node = null;
+        //         } else {
+        //             node = node.parentNode;
+        //         }
+        //         notFirstNode = true;
+        //     }
+        //     //如果直到根结点，都没有找到mouseUp，mouseDown共用的节点，
+        //     path = getDomPath(target);
+        //     if (path !== null) {
+        //         offset = target.getBoundingClientRect();
+        //         return {
+        //             path: path,
+        //             left: offset.left,
+        //             top: offset.top
+        //         };
+        //     } else {
+        //         return null;
+        //     }
+        // }
 
         var modifierKeys = {
             17: 'CTRL', // Ctrl
