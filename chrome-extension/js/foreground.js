@@ -1703,19 +1703,12 @@
 
     // 初始化dom
     function initRecorderDom() {
-        var recorderLoaded = document.getElementById('uirecorder-tools-pannel');
+        let recorderLoaded = document.getElementById('uirecorder-tools-pannel');
         if (recorderLoaded) {
             // 定时探测DOM是否被破坏
             setTimeout(initRecorderDom, 200);
             return;
         }
-
-        // 加载探测
-        recorderLoaded = document.createElement("span");
-        recorderLoaded.id = 'uirecorderloaded';
-        recorderLoaded.style.display = 'none';
-        document.body.appendChild(recorderLoaded);
-
         // 初始化工具面板
         function initToolsPannel() {
             // tools pannel
